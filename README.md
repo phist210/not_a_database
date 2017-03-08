@@ -1,8 +1,8 @@
 # not_a_database
 
-### Repository = not_a_database
+## Repository = not_a_database
 
-## File Names & Descriptions:
+### File Names & Descriptions:
 
   1. README.md basic file information
   2. not_a_database.py first attempt, cannot parse through entries for login verification (will fix soon)
