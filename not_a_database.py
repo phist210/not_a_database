@@ -87,7 +87,8 @@ def main(user):
                 else:
                     user.add_new_entry(user.username,
                                        user.password,
-                                       user.full_name, user.date_of_b)
+                                       user.full_name,
+                                       user.date_of_b)
 
                 print("Added {} to database.".format(user.full_name))
                 input("Hit ENTER to return to menu. ")

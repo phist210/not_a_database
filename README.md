@@ -9,7 +9,8 @@
     * Prompts for user login information, denies access if information is invalid
     * Allows user to view and update the database, logout and quit the program
     * Password is not visible at login
-  3. test_database.py, an empty test suite awaiting completion
+  3. not_the_database.txt, an empty .txt database for the program
+  4. test_database.py, an empty test suite awaiting completion
 
 ### To run:
 
