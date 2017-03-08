@@ -1,7 +1,7 @@
 import os
 import re
-import csv
 import time
+import csv
 
 
 def clean_sentence(sentence):
@@ -20,11 +20,12 @@ class User:
 
     def __str__(self):
         user_list = []
-        database = open("not_the_database.txt", "r")
-        for line in database.readlines():
-            user_list.append(line)
-            for entry in user_list:
-                print(entry)
+        with open('not_the_database.txt', "r") as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            for row in reader:
+                user_list.append(row)
+            for credentials in user_list:
+                print(credentials)
 
     def add_new_entry(self, username, password, full_name):
         user_list = [self.username, self.password, self.full_name]
@@ -33,10 +34,19 @@ class User:
             database.write("\n")
 
     def login(self, username, password):
-        with open('not_the_database.txt', "r") as database:
-            reader = csv.reader(database, delimiter=",")
+        user_list = []
+        valid_users = []
+        with open('not_the_database.txt', "r") as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
             for row in reader:
-                return row[0] + row[1]
+                user_list.append(row)
+            for credentials in user_list:
+                if credentials[0] == username and credentials[1] == password:
+                    valid_users.append(user_list)
+            if valid_users:
+                return True
+            else:
+                return False
 
 
 def main(user):
@@ -74,17 +84,16 @@ def login():
     clear()
     print("\t\t\tWelcome.")
     print("\tProvide the correct login information\n")
-    uname = input("Please, enter your username: ")
-    pword = input("...and your password: ")
-    user = User(uname, pword)
-    for row in user.login(uname, pword):
-        if uname + pword == user.login(uname, pword):
-            print("\nLogin successful, here is your menu.")
-            main(user)
-        else:
-            print("\nInvalid inputs, try again.")
-            time.sleep(1.3)
-            login()
+    username = input("Please, enter your username: ")
+    password = input("...and your password: ")
+    user = User(username, password)
+    if user.login(username, password):
+        print("\nLogin successful, here is your menu.")
+        main(user)
+    else:
+        print("\nInvalid inputs, try again.")
+        time.sleep(1.2)
+        login()
 
 
 if __name__ == "__main__":
