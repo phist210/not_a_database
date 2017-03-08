@@ -1,6 +1,0 @@
-josh,1234,Joshua Friese
-sterling,1234,Sterling Shelly
-atlas,1234,ATLAS FRIESE
-raybay,1234,Rachel Bailey
-nocknock,1234,Trevor Noah
-jimbone,1234,Jim Crawford

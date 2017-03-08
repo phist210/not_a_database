@@ -5,7 +5,10 @@
 ### File Names & Descriptions:
 
   1. README.md basic file information
-  2. not_a_database.py first attempt, cannot parse through entries for login verification (will fix soon)
+  2. not_a_database.py
+    * Prompts for user login information, denies access if information is invalid
+    * Allows user to view and update the database, logout and quit the program
+    * Password is not visible at login
   3. test_database.py, an empty test suite awaiting completion
 
 ### To run:
